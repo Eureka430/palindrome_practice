@@ -5,10 +5,16 @@ Given a string text, return true if it is a palindrome, or false otherwise.
 
 For this question, letters are NOT case-sensitive, for example, "LEVeL" is a palindrome.
 """
-def is_palindrome(text):
-    # Change here so it works correctly
 
-    return True
+def is_palindrome(text):
+    clean_text = ''
+    for letter in text:
+        if letter.isalnum():
+            clean_text = clean_text + letter
+    clean_text = clean_text.lower()
+    clean_text = clean_text.replace(' ','')
+    return clean_text == clean_text[::-1]
+
 
 
 if __name__ == '__main__':
